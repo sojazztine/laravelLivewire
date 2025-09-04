@@ -1,18 +1,3 @@
-{{-- @props(['items' => []])
-
-<div class="breadcrumbs text-sm">
-    <ul>
-        @foreach($items as $index => $item)
-            @if(isset($item['url']) && $index !== array_key_last($items))
-                <li><a href="{{ $item['url'] }}">{{ $item['label'] }}</a></li>
-            @else
-                <li>{{ $item['label'] }}</li>
-            @endif
-        @endforeach
-    </ul>
-</div> --}}
-
-
 @php
     $segments = request()->segments();
 @endphp
@@ -30,7 +15,21 @@
             @if($loop->last)
                 <li>{{ $label }}</li>
             @else
-                <li><a href="{{ $url }}">{{ $label }}</a></li>
+                <li><a href="{{ $url }}">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="h-4 w-4 stroke-current">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                    </svg>
+                    {{ $label }}
+                    </a>
+                </li>
             @endif
         @endforeach
     </ul>
