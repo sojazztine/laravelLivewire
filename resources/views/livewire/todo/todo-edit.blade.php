@@ -8,7 +8,7 @@
         <x-breadcrumbs/>
 
 
-    <form action="" wire:submit="submit">
+    <form action="" wire:submit="update">
 
         <fieldset class="fieldset">
             <legend class="fieldset-legend">Title</legend>
@@ -23,7 +23,7 @@
         </fieldset>
 
         <div class="flex justify-end">
-            <flux:button type="submit" flux:button variant="primary" color="sky" class="cursor-pointer">Create</flux:button>
+            <flux:button type="submit" flux:button variant="primary" color="sky" class="cursor-pointer">Update</flux:button>
         </div>
 
     </form>

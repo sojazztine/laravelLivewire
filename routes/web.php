@@ -4,6 +4,7 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Todo\TodoCreate;
+use App\Livewire\Todo\TodoEdit;
 use App\Livewire\Todo\TodoIndex;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,6 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth'])->group(function() {
     Route::get('/todo', TodoIndex::class)->name('todo.index');
     Route::get('/todo/create', TodoCreate::class)->name('todo.create');
-    Route::get('/todo/{id}/edit', TodoCreate::class)->name('todo.edit');
+    Route::get('/todo/{id}/edit', TodoEdit::class)->name('todo.edit');
 });
 require __DIR__.'/auth.php';
