@@ -13,13 +13,13 @@
         <fieldset class="fieldset">
             <legend class="fieldset-legend">Title</legend>
             <input type="text" class="input" placeholder="Type here" wire:model="title" />
-            <em class="label">Optional</em>
+             @error('title') <em class="text-red-500" x-data="{ show:true }" x-init="setTimeout(() => show = false, 5000)" x-show="show" >{{ $message }}</em> @enderror
         </fieldset>
 
         <fieldset class="fieldset">
             <legend class="fieldset-legend">Description</legend>
             <input type="text" class="input  " placeholder="Type here" wire:model="description" />
-            <em class="label">Optional</em>
+             @error('description') <em class="text-red-500" x-data="{ show:true }" x-init="setTimeout(() => show = false, 5000)" x-show="show" >{{ $message }}</em> @enderror
         </fieldset>
 
         <div class="flex justify-end">

@@ -34,7 +34,7 @@
             <th>
                 <div class="flex">
                    <a href="{{ route('todo.edit', $todo->id) }}" ><flux:icon name="pencil-square" class="cursor-pointer text-green-800 mr-2"  /></a>
-                    <flux:icon name="trash" class="cursor-pointer text-red-800"  wire:click.prevent="confirmTodoDeletion({{ $todo->id }})" />
+                    <flux:icon name="trash" class="cursor-pointer text-red-800"  wire:click.prevent="confirmTodoDeletion({{ $todo->idw }})" />
                 </div>
             </th>
         </tr>
@@ -49,12 +49,12 @@
         </div>
     @endempty
 
-<x-delete-modal
-    confirm="deleteTodo"
-    cancel="$set('confirmingTodoDeletion', null)"
-    :show="$confirmingTodoDeletion !== null"
->
+    <x-delete-modal
+        confirm="deleteTodo"
+        cancel="$set('confirmingTodoDeletion', null)"
+        :show="$confirmingTodoDeletion !== null"
+    >
 
-</x-delete-modal>
+    </x-delete-modal>
     </x-card>
 </div>
